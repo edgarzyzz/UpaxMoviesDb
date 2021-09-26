@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "466965203748",
+    "project_id": "upexmovies",
+    "storage_bucket": "upexmovies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466965203748:android:180f3dd28bfab7a64f81b1",
+        "android_client_info": {
+          "package_name": "com.gogaedd.upaxmovies_gge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466965203748-cdmb8eu8dsmariau6tevj8941tbogifd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe3wni1WNOIGj2SqnBZqKUwwf-k2InwJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466965203748-cdmb8eu8dsmariau6tevj8941tbogifd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

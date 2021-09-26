@@ -8,17 +8,16 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.gogaedd.upaxmovies_gge.adapters.MoviewAdapter
 import com.gogaedd.upaxmovies_gge.listeners.MovieListener
 import com.gogaedd.upaxmovies_gge.core.persistence.model.Movie
-import com.gogaedd.upaxmovies_gge.databinding.FragmentHomeBinding
-import com.gogaedd.upaxmovies_gge.viewmodel.HomeViewModel
+import com.gogaedd.upaxmovies_gge.databinding.FragmentMoviesMainBinding
+import com.gogaedd.upaxmovies_gge.viewmodel.MoviesViewModel
 
-class HomeFragment : Fragment(), MovieListener {
+class MoviesMianFragment : Fragment(), MovieListener {
     lateinit var mMoviePopulaAdapter: MoviewAdapter
-    lateinit var mViewmodel : HomeViewModel
-    lateinit var mBinding : FragmentHomeBinding
+    lateinit var mViewmodel : MoviesViewModel
+    lateinit var mBinding : FragmentMoviesMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,8 +25,8 @@ class HomeFragment : Fragment(), MovieListener {
     ): View? {
 
 
-        mViewmodel = ViewModelProvider(this). get(HomeViewModel::class.java)
-        mBinding =  FragmentHomeBinding.inflate(inflater, container, false)
+        mViewmodel = ViewModelProvider(this). get(MoviesViewModel::class.java)
+        mBinding =  FragmentMoviesMainBinding.inflate(inflater, container, false)
 
         mBinding.viewmodel =  mViewmodel
         mBinding.lifecycleOwner = viewLifecycleOwner
@@ -55,7 +54,7 @@ class HomeFragment : Fragment(), MovieListener {
     }
 
     override fun onClickMovie(moview: Movie) {
-        val action = HomeFragmentDirections.actionGoToDetailMovieFragment(moview)
+        val action = MoviesMianFragmentDirections.actionGoToDetailMovieFragment(moview)
         findNavController().navigate(action)
     }
 

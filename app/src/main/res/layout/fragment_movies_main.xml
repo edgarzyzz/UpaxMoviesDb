@@ -7,14 +7,15 @@
 
         <variable
             name="viewmodel"
-            type="com.gogaedd.upaxmovies_gge.viewmodel.HomeViewModel" />
+            type="com.gogaedd.upaxmovies_gge.viewmodel.MoviesViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.HomeFragment">
+        android:background="@android:color/black"
+        tools:context=".ui.MoviesMianFragment">
 
         <TextView
             android:layout_width="match_parent"

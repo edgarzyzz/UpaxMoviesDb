@@ -2,11 +2,11 @@ package com.gogaedd.upaxmovies_gge.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.gogaedd.upaxmovies_gge.repository.HomeRepository
+import com.gogaedd.upaxmovies_gge.repository.MoviesRepository
 
-class HomeViewModel(application: Application): AndroidViewModel(application) {
+class MoviesViewModel(application: Application): AndroidViewModel(application) {
 
-    private val repository =  HomeRepository(application)
+    private val repository =  MoviesRepository(application)
 
     private val lvdPopularMovies = repository.getLvdPopularMovies()
 

@@ -7,7 +7,7 @@ import com.gogaedd.upaxmovies_gge.core.persistence.model.Movie
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 
-class HomeRepository(application: Application) {
+class MoviesRepository(application: Application) {
     private val db = AppDatabase.getDatabase(application)
     private val movieDao = db.movieDao()
 

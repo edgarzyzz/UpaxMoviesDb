@@ -10,14 +10,14 @@
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/actionGoToHomeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/actionGoToMoviesMainFragment"
+            app:destination="@id/moviesMainFragment" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.gogaedd.upaxmovies_gge.ui.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:id="@+id/moviesMainFragment"
+        android:name="com.gogaedd.upaxmovies_gge.ui.MoviesMianFragment"
+        android:label=""
+        tools:layout="@layout/fragment_movies_main" >
         <action
             android:id="@+id/actionGoToDetailMovieFragment"
             app:destination="@id/detailMovieFragment" />

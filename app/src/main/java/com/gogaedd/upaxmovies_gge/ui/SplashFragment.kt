@@ -39,7 +39,7 @@ class SplashFragment : Fragment() {
     }
     val observerStateload = Observer<Int>{
         if (it == ConstantsApp.STATE_LOAD.LOAD_OK){
-            val action = SplashFragmentDirections.actionGoToHomeFragment()
+            val action = SplashFragmentDirections.actionGoToMoviesMainFragment()
             findNavController().navigate(action)
         }
     }
