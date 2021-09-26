@@ -10,8 +10,8 @@
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/actionGoToMoviesMainFragment"
-            app:destination="@id/moviesMainFragment" />
+            android:id="@+id/action_goToHomeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/moviesMainFragment"
@@ -31,4 +31,21 @@
             android:name="movie"
             app:argType="com.gogaedd.upaxmovies_gge.core.persistence.model.Movie" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gogaedd.upaxmovies_gge.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_goToMoviesMainFragment"
+            app:destination="@id/moviesMainFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapAppFragment"
+            app:destination="@id/mapAppFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapAppFragment"
+        android:name="com.gogaedd.upaxmovies_gge.ui.MapAppFragment"
+        android:label="fragment_map_app"
+        tools:layout="@layout/fragment_map_app" />
 </navigation>
