@@ -28,12 +28,13 @@ class HomeFragment : Fragment() {
         }
 
         cvMapHome.setOnClickListener{
-            val action = HomeFragmentDirections.actionHomeFragmentToMapAppFragment()
+            val action = HomeFragmentDirections.actionGoToMapAppFragment()
             findNavController().navigate(action)
         }
 
         cvMyCloudHome.setOnClickListener{
-
+            val action = HomeFragmentDirections.actionGoToImagesFragment()
+            findNavController().navigate(action)
         }
     }
 

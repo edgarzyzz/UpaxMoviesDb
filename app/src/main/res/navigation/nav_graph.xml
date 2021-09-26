@@ -40,12 +40,20 @@
             android:id="@+id/action_goToMoviesMainFragment"
             app:destination="@id/moviesMainFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_mapAppFragment"
+            android:id="@+id/action_goToMapAppFragment"
             app:destination="@id/mapAppFragment" />
+        <action
+            android:id="@+id/action_goToImagesFragment"
+            app:destination="@id/imagesFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapAppFragment"
         android:name="com.gogaedd.upaxmovies_gge.ui.MapAppFragment"
         android:label="fragment_map_app"
         tools:layout="@layout/fragment_map_app" />
+    <fragment
+        android:id="@+id/imagesFragment"
+        android:name="com.gogaedd.upaxmovies_gge.ui.ImagesFragment"
+        android:label="fragment_images"
+        tools:layout="@layout/fragment_images" />
 </navigation>

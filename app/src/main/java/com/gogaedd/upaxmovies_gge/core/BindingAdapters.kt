@@ -7,6 +7,7 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.gogaedd.upaxmovies_gge.adapters.ImageAdapter
 import com.gogaedd.upaxmovies_gge.adapters.MoviewAdapter
 import com.gogaedd.upaxmovies_gge.core.persistence.model.Movie
 
@@ -43,6 +44,17 @@ object BindingAdapters {
         recyclerView.adapter?.let {adapterNotNull->
             if (adapterNotNull is MoviewAdapter){
                 adapterNotNull.updateElements(listMovies)
+            }
+        }
+
+    }
+
+    @JvmStatic
+    @BindingAdapter("dataImages")
+    fun dataImages(recyclerView: RecyclerView, listImages: MutableList<String>){
+        recyclerView.adapter?.let {adapterNotNull->
+            if (adapterNotNull is ImageAdapter){
+                adapterNotNull.updateElements(listImages)
             }
         }
 
@@ -88,4 +100,6 @@ object BindingAdapters {
         rb.rating= fl
 
     }
+
+
 }

@@ -11,16 +11,23 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationListener
 import android.provider.Settings
+import android.util.Log
 import com.gogaedd.upaxmovies_gge.repository.MainRepository
 
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+
+
 
 
 
