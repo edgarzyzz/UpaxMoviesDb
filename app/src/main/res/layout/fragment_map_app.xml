@@ -14,6 +14,21 @@
         android:layout_height="match_parent"
         tools:context=".ui.MapAppFragment">
 
+
+
+        <com.here.sdk.mapview.MapView
+            android:id="@+id/mapvApp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/rvListLoc"
+            app:layout_constraintStart_toStartOf="@id/rvListLoc"
+            app:layout_constraintEnd_toEndOf="@id/rvListLoc"
+            app:layout_constraintBottom_toBottomOf="@id/rvListLoc"
+            android:background="@android:color/white"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvListLoc"
             android:layout_width="100dp"
