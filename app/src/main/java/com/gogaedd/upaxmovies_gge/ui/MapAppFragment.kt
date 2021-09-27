@@ -78,11 +78,11 @@ class MapAppFragment : Fragment() {
         // Load a scene from the HERE SDK to render the map with a map scheme.
         mMapView.mapScene.loadScene(MapScheme.NORMAL_DAY) { mapError ->
             if (mapError == null) {
-                val distanceInMeters = (1000 * 10).toDouble()
+                val distanceInMeters = (1000 * 100).toDouble()
                 mMapView.getCamera().lookAt(
                     GeoCoordinates(19.432275,-99.133930), distanceInMeters
                 )
-//                startLoadMarkers()
+                startLoadMarkers()
             } else {
                 Log.d("TAG", "Loading map failed: mapError: " + mapError.name)
             }
@@ -90,11 +90,21 @@ class MapAppFragment : Fragment() {
     }
 
     private fun startLoadMarkers() {
-        val mapImage = MapImageFactory.fromResource(requireContext().resources, R.drawable.ic_delete)
+        val mapImage = MapImageFactory.fromResource(requireContext().resources, R.drawable.ic_menu_myplaces)
         viewModel.getLocations()?.let{listLoc->
             listLoc.forEach{loc->
                 val mapMarker = MapMarker(GeoCoordinates(loc.lat.toDouble(), loc.long.toDouble()), mapImage)
+                mMapView.mapScene.addMapMarker(mapMarker)
             }
+//            if(!listLoc.isEmpty()){
+//                val distanceInMeters = (1000 * 10).toDouble()
+//                val locationApp = listLoc[0]
+//                mMapView.getCamera().lookAt(
+//                    GeoCoordinates(locationApp.lat.toDouble(),locationApp.long.toDouble()), distanceInMeters
+////                    GeoCoordinates(locationApp.long.toDouble(),locationApp.lat.toDouble()), distanceInMeters
+//                )
+//            }
+
         }
 
     }
