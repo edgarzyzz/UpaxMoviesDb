@@ -96,14 +96,6 @@ class MapAppFragment : Fragment() {
                 val mapMarker = MapMarker(GeoCoordinates(loc.lat.toDouble(), loc.long.toDouble()), mapImage)
                 mMapView.mapScene.addMapMarker(mapMarker)
             }
-//            if(!listLoc.isEmpty()){
-//                val distanceInMeters = (1000 * 10).toDouble()
-//                val locationApp = listLoc[0]
-//                mMapView.getCamera().lookAt(
-//                    GeoCoordinates(locationApp.lat.toDouble(),locationApp.long.toDouble()), distanceInMeters
-////                    GeoCoordinates(locationApp.long.toDouble(),locationApp.lat.toDouble()), distanceInMeters
-//                )
-//            }
 
         }
 
