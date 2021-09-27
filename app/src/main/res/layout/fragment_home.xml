@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgvCompanyHome">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -36,14 +36,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/upax" />
+                android:src="@drawable/img_movies" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Movies" />
+                android:text="Movies"
+                android:paddingStart="10dp"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/white"
+                android:background="@android:color/darker_gray"/>
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -58,7 +62,7 @@
         app:layout_constraintStart_toEndOf="@id/cvMoviesHome"
         app:layout_constraintTop_toTopOf="@id/cvMoviesHome">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -67,14 +71,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/upax" />
+                android:src="@drawable/img_map" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/white"
+                android:background="@android:color/darker_gray"
                 android:text="Map" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -90,7 +98,7 @@
         app:layout_constraintStart_toStartOf="@id/cvMoviesHome"
         app:layout_constraintTop_toBottomOf="@id/cvMoviesHome">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -99,14 +107,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/upax" />
+                android:src="@drawable/img_cloud" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="My cloud" />
+                android:text="My cloud"
+                android:paddingStart="10dp"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/white"
+                android:background="@android:color/darker_gray"/>
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
