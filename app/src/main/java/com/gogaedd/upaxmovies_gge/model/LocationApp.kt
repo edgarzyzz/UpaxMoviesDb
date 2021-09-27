@@ -1,4 +1,4 @@
-package com.gogaedd.upaxmovies_gge
+package com.gogaedd.upaxmovies_gge.model
 
 data class LocationApp(
     var lat : String ="0.0",

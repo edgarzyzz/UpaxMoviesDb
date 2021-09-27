@@ -3,23 +3,28 @@ package com.gogaedd.upaxmovies_gge.core
 import android.view.View
 import android.widget.ImageView
 import android.widget.RatingBar
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.gogaedd.upaxmovies_gge.adapters.ImageAdapter
+import com.gogaedd.upaxmovies_gge.adapters.LocationAdapter
 import com.gogaedd.upaxmovies_gge.adapters.MoviewAdapter
 import com.gogaedd.upaxmovies_gge.core.persistence.model.Movie
+import com.gogaedd.upaxmovies_gge.model.LocationApp
+import java.text.SimpleDateFormat
+import java.util.*
 
 object BindingAdapters {
 
 
     @JvmStatic
     @BindingAdapter("visibilityMessageError")
-    fun visibilityMessageError(viewError: View, state: Int){
-        viewError.visibility = if (state== ConstantsApp.STATE_LOAD.LOAD_ERROR){
+    fun visibilityMessageError(viewError: View, state: Int) {
+        viewError.visibility = if (state == ConstantsApp.STATE_LOAD.LOAD_ERROR) {
             View.VISIBLE
-        }else{
+        } else {
             View.GONE
         }
 
@@ -27,10 +32,10 @@ object BindingAdapters {
 
     @JvmStatic
     @BindingAdapter("visibilityLoader")
-    fun visibilityLoader(viewLoader: View, state: Int){
-        viewLoader.visibility = if (state== ConstantsApp.STATE_LOAD.START_LOADING){
+    fun visibilityLoader(viewLoader: View, state: Int) {
+        viewLoader.visibility = if (state == ConstantsApp.STATE_LOAD.START_LOADING) {
             View.VISIBLE
-        }else{
+        } else {
 
             View.GONE
 
@@ -40,9 +45,9 @@ object BindingAdapters {
 
     @JvmStatic
     @BindingAdapter("dataMovies")
-    fun dataMovies(recyclerView: RecyclerView, listMovies : MutableList<Movie>){
-        recyclerView.adapter?.let {adapterNotNull->
-            if (adapterNotNull is MoviewAdapter){
+    fun dataMovies(recyclerView: RecyclerView, listMovies: MutableList<Movie>) {
+        recyclerView.adapter?.let { adapterNotNull ->
+            if (adapterNotNull is MoviewAdapter) {
                 adapterNotNull.updateElements(listMovies)
             }
         }
@@ -51,21 +56,31 @@ object BindingAdapters {
 
     @JvmStatic
     @BindingAdapter("dataImages")
-    fun dataImages(recyclerView: RecyclerView, listImages: MutableList<String>){
-        recyclerView.adapter?.let {adapterNotNull->
-            if (adapterNotNull is ImageAdapter){
+    fun dataImages(recyclerView: RecyclerView, listImages: MutableList<String>) {
+        recyclerView.adapter?.let { adapterNotNull ->
+            if (adapterNotNull is ImageAdapter) {
                 adapterNotNull.updateElements(listImages)
             }
         }
 
     }
 
+    @JvmStatic
+    @BindingAdapter("dataLocations")
+    fun dataLocations(recyclerView: RecyclerView, listLocations: MutableList<LocationApp>) {
+        recyclerView.adapter?.let { adapterNotNull ->
+            if (adapterNotNull is LocationAdapter) {
+                adapterNotNull.updateElements(listLocations)
+            }
+        }
+
+    }
 
 
     @JvmStatic
     @BindingAdapter("parseAndDrawImageUrl")
-    fun parseAndDrawImageUrl(imgview: ImageView, partlyUrl:String){
-        val url ="https://image.tmdb.org/t/p/w500/$partlyUrl"
+    fun parseAndDrawImageUrl(imgview: ImageView, partlyUrl: String) {
+        val url = "https://image.tmdb.org/t/p/w500/$partlyUrl"
 
 
         if (partlyUrl.isNullOrEmpty()) return
@@ -81,7 +96,7 @@ object BindingAdapters {
 
     @JvmStatic
     @BindingAdapter("drawImageUrl")
-    fun drawImageUrl(imgview: ImageView, url:String){
+    fun drawImageUrl(imgview: ImageView, url: String) {
         if (url.isNullOrEmpty()) return
         val options: RequestOptions = RequestOptions()
             .centerCrop()
@@ -92,13 +107,26 @@ object BindingAdapters {
 
         Glide.with(imgview.context).load(url).apply(options).into(imgview)
     }
+
     @JvmStatic
     @BindingAdapter("drawRatingBy10")
-    fun drawRatingBy10(rb: RatingBar, rate:Float){
+    fun drawRatingBy10(rb: RatingBar, rate: Float) {
 
         val fl = rate / 2
-        rb.rating= fl
+        rb.rating = fl
 
+    }
+    @JvmStatic
+    @BindingAdapter("drawDateFromTimestamp")
+    fun drawDateFromTimestamp(textView: TextView, timeString: String) {
+        try {
+            val sdf = SimpleDateFormat("MM/dd/yyyy HH:mm")
+            val netDate = Date(timeString.toLong() )
+            val format = sdf.format(netDate)
+            textView.text = format
+        } catch (e: Exception) {
+            textView.text = timeString
+        }
     }
 
 
