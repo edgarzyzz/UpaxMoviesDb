@@ -1,6 +1,7 @@
 package com.gogaedd.upaxmovies_gge.viewmodel
 
 import android.app.Application
+import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import com.gogaedd.upaxmovies_gge.repository.ImagesRepository
 
@@ -15,6 +16,10 @@ class ImagesViewModel (application: Application) : AndroidViewModel(application)
     fun startListenChangesCloud(){
         repository.loadData()
 
+    }
+
+    fun setImage(data: Uri) {
+        repository.uploadImage(data)
     }
 
 

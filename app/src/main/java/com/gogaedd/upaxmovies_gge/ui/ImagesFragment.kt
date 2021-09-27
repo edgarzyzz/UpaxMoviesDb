@@ -14,7 +14,6 @@ import com.gogaedd.upaxmovies_gge.adapters.ImageAdapter
 import com.gogaedd.upaxmovies_gge.databinding.FragmentImagesBinding
 import com.gogaedd.upaxmovies_gge.viewmodel.ImagesViewModel
 import kotlinx.android.synthetic.main.fragment_images.*
-import androidx.core.app.ActivityCompat.startActivityForResult
 import java.io.IOException
 
 
@@ -62,15 +61,12 @@ class ImagesFragment : Fragment() {
                 return
             }
 
-            val filePath = data.data
-            try {
-                val bitmap =
-                    MediaStore.Images.Media.getBitmap(requireContext().contentResolver, filePath)
-//                uploadImage.setImageBitmap(bitmap)
-            } catch (e: IOException) {
-                e.printStackTrace()
+            data?.data?.let {uriNotNull->
+                viewmodel.setImage(uriNotNull)
             }
+
         }
+
 
 
     }
